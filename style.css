@@ -1,0 +1,224 @@
+/* ---------------- Font ---------------- */
+@font-face {
+    font-family: "Britannic Bold";
+    src: url("../fonts/BritannicBold.woff2") format("woff2"),
+         url("../fonts/BritannicBold.woff") format("woff"),
+         url("../fonts/BritannicBold.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* ---------------- Base ---------------- */
+body {
+    font-family: "Britannic Bold", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #0a0a0a; /* خلفية سودا */
+    color: #eee;
+    transition: all 0.5s ease;
+}
+
+/* ---------------- Navbar ---------------- */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(255,255,255,0.1); /* شفافية */
+    backdrop-filter: blur(25px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    z-index: 1000;
+    box-shadow: 0 0 20px #ff7f5085;
+}
+
+nav a, nav button {
+    margin-left: 10px;
+    font-size: 18px;
+    text-decoration: none;
+    color: #ff7f50; /* برتقالي مودرن */
+    padding: 6px 12px;
+    border-radius: 5px;
+    transition: all 0.5s;
+    cursor: pointer;
+    font-family: "Britannic Bold", sans-serif;
+}
+
+nav a.btn:hover, nav button:hover {
+    background-color: #ff7f50;
+    color: #ffffff;
+    transform: scale(1.1);
+}
+
+/* ---------------- Home Section ---------------- */
+#home {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 180px 50px 80px;
+}
+
+.home-left {
+    max-width: 50%;
+    animation: slideInLeft 1s ease forwards;
+    text-align: left; /* محاذاة النص لليسار */
+    animation: floatImg 2s ease-in-out infinite;
+}
+
+.greeting, .name, .role {
+    margin: 0;
+    padding: 0;
+    font-family: "Britannic Bold", sans-serif; /* تأكيد الخط */
+}
+
+.greeting {
+    font-size: 75px;
+    color: #ff7f50;
+}
+
+.name {
+    font-size: 66px;
+    color: #ff7f50;
+    margin-top: 10px;
+}
+
+.role {
+    font-size: 60.5px;
+    color: #ddd;
+    margin-top: 10px;
+}
+
+.home-right {
+    max-width: 40%;
+    animation: floatImg 2s ease-in-out infinite;
+}
+
+.profile-img {
+    width: 290px;
+    border-radius: 50%;
+    border: 5px solid #ff7f50;
+    box-shadow: 0 0 20px #ff7f50;
+}
+
+/* ---------------- Animations ---------------- */
+@keyframes floatImg {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+@keyframes slideInLeft {
+    from { opacity: 0; transform: translateX(-100%); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* ---------------- Dark Mode ---------------- */
+body.dark-mode {
+    background-color: #0a0a0a;
+    color: #eee;
+}
+
+body.dark-mode nav {
+    background-color: rgba(255,255,255,0.05);
+}
+
+body.dark-mode footer {
+    background-color: #111;
+}
+
+
+/* ---------------- Section Titles ---------------- */
+section h2 {
+    font-size: 42px;
+    color: #ff7f50; /* عنوان برتقالي */
+    margin-bottom: 20px;
+    position: relative;
+}
+
+section h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: #ff7f50;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* ---------------- Sections ---------------- */
+section {
+    padding: 100px 20px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease;
+}
+
+/* ---------------- Projects ---------------- */
+.projects-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.project-card {
+    padding: 25px;
+    background-color: rgba(255,255,255,0.05);
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(255,127,80,0.3);
+    transition: transform 0.5s, box-shadow 0.5s;
+}
+
+.project-card:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 30px #ff7f50;
+}
+
+/* ---------------- Contact Icons ---------------- */
+.contact-icons i {
+    font-size: 44px;
+    margin: 0 20px;
+    color: #ff7f50;
+    transition: all 0.5s ease;
+}
+
+.contact-icons i:hover {
+    transform: rotate(360deg) scale(1.5);
+    color: #ffa07a;
+}
+
+/* ---------------- Footer ---------------- */
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+    background-color: #111;
+    color: #ff7f50;
+    font-size: 18px;
+}
+
+/* ---------------- Animations ---------------- */
+@keyframes floatImg {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+@keyframes slideInLeft {
+    from { opacity: 0; transform: translateX(-100%); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* ---------------- Dark Mode ---------------- */
+body.dark-mode {
+    background-color: #0a0a0a;
+    color: #eee;
+}
+
+body.dark-mode nav {
+    background-color: rgba(255,255,255,0.05);
+}
+
+body.dark-mode footer {
+    background-color: #111;
+}
